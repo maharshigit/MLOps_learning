@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/932210561846729984/710819da164c4692aeab6ff6b8da1096/artifacts
+end_time: 1725643539493
+entry_point_name: ''
+experiment_id: '932210561846729984'
+lifecycle_stage: active
+run_id: 710819da164c4692aeab6ff6b8da1096
+run_name: sassy-mare-962
+run_uuid: 710819da164c4692aeab6ff6b8da1096
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1725643523456
+status: 3
+tags: []
+user_id: venu_reddy

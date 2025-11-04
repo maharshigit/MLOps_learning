@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/403014734416896923/6e996bbfd1fa45afb0bf63854c98c2db/artifacts
+end_time: 1725642962176
+entry_point_name: ''
+experiment_id: '403014734416896923'
+lifecycle_stage: active
+run_id: 6e996bbfd1fa45afb0bf63854c98c2db
+run_name: powerful-stag-532
+run_uuid: 6e996bbfd1fa45afb0bf63854c98c2db
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1725642959314
+status: 3
+tags: []
+user_id: venu_reddy

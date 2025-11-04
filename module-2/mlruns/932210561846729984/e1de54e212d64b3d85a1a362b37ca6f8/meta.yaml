@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/932210561846729984/e1de54e212d64b3d85a1a362b37ca6f8/artifacts
+end_time: 1725858405269
+entry_point_name: ''
+experiment_id: '932210561846729984'
+lifecycle_stage: active
+run_id: e1de54e212d64b3d85a1a362b37ca6f8
+run_name: ambitious-snipe-38
+run_uuid: e1de54e212d64b3d85a1a362b37ca6f8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1725858386096
+status: 3
+tags: []
+user_id: venu_reddy

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/932210561846729984/1b1e44c14225414a88d34e94bb9517da/artifacts
+end_time: 1725643494420
+entry_point_name: ''
+experiment_id: '932210561846729984'
+lifecycle_stage: active
+run_id: 1b1e44c14225414a88d34e94bb9517da
+run_name: overjoyed-eel-704
+run_uuid: 1b1e44c14225414a88d34e94bb9517da
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1725643475171
+status: 3
+tags: []
+user_id: venu_reddy

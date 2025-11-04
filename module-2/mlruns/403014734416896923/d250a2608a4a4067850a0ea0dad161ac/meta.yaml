@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/403014734416896923/d250a2608a4a4067850a0ea0dad161ac/artifacts
+end_time: 1725642927046
+entry_point_name: ''
+experiment_id: '403014734416896923'
+lifecycle_stage: active
+run_id: d250a2608a4a4067850a0ea0dad161ac
+run_name: shivering-whale-592
+run_uuid: d250a2608a4a4067850a0ea0dad161ac
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1725642924743
+status: 3
+tags: []
+user_id: venu_reddy

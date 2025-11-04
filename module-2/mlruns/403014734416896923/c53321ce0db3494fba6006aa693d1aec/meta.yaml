@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/403014734416896923/c53321ce0db3494fba6006aa693d1aec/artifacts
+end_time: 1725642934943
+entry_point_name: ''
+experiment_id: '403014734416896923'
+lifecycle_stage: active
+run_id: c53321ce0db3494fba6006aa693d1aec
+run_name: stately-shad-620
+run_uuid: c53321ce0db3494fba6006aa693d1aec
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1725642927079
+status: 3
+tags: []
+user_id: venu_reddy

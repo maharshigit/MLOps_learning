@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/222046930665661431/ac79ddafbf834dc087d7fe2d82885436/artifacts
+end_time: 1725641288395
+entry_point_name: ''
+experiment_id: '222046930665661431'
+lifecycle_stage: active
+run_id: ac79ddafbf834dc087d7fe2d82885436
+run_name: rogue-shad-946
+run_uuid: ac79ddafbf834dc087d7fe2d82885436
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1725641248617
+status: 3
+tags: []
+user_id: venu_reddy

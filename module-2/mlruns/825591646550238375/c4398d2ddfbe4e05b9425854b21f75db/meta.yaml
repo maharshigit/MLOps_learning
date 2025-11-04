@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/825591646550238375/c4398d2ddfbe4e05b9425854b21f75db/artifacts
+end_time: 1725641365137
+entry_point_name: ''
+experiment_id: '825591646550238375'
+lifecycle_stage: active
+run_id: c4398d2ddfbe4e05b9425854b21f75db
+run_name: capricious-bat-836
+run_uuid: c4398d2ddfbe4e05b9425854b21f75db
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1725641365030
+status: 3
+tags: []
+user_id: venu_reddy

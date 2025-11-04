@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/403014734416896923/a22112822aca41f28ac0342a0b9e9db3/artifacts
+end_time: 1725642966771
+entry_point_name: ''
+experiment_id: '403014734416896923'
+lifecycle_stage: active
+run_id: a22112822aca41f28ac0342a0b9e9db3
+run_name: learned-sheep-985
+run_uuid: a22112822aca41f28ac0342a0b9e9db3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1725642962234
+status: 3
+tags: []
+user_id: venu_reddy

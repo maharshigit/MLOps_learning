@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/932210561846729984/296d44c5d0ac4b42bb95a55e168d5aee/artifacts
+end_time: 1725643556979
+entry_point_name: ''
+experiment_id: '932210561846729984'
+lifecycle_stage: active
+run_id: 296d44c5d0ac4b42bb95a55e168d5aee
+run_name: dapper-jay-891
+run_uuid: 296d44c5d0ac4b42bb95a55e168d5aee
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1725643539598
+status: 3
+tags: []
+user_id: venu_reddy

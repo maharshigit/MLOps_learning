@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/403014734416896923/b3c6c94fd14242ed86faaa66db18a1ad/artifacts
+end_time: 1725642919463
+entry_point_name: ''
+experiment_id: '403014734416896923'
+lifecycle_stage: active
+run_id: b3c6c94fd14242ed86faaa66db18a1ad
+run_name: loud-ant-324
+run_uuid: b3c6c94fd14242ed86faaa66db18a1ad
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1725642919051
+status: 3
+tags: []
+user_id: venu_reddy

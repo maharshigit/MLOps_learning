@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/403014734416896923/3572d6566b5e43948b8f40307f7733ff/artifacts
+end_time: 1725642948589
+entry_point_name: ''
+experiment_id: '403014734416896923'
+lifecycle_stage: active
+run_id: 3572d6566b5e43948b8f40307f7733ff
+run_name: fun-vole-506
+run_uuid: 3572d6566b5e43948b8f40307f7733ff
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1725642943764
+status: 3
+tags: []
+user_id: venu_reddy

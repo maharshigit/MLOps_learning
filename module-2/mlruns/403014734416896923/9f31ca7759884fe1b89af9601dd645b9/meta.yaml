@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/403014734416896923/9f31ca7759884fe1b89af9601dd645b9/artifacts
+end_time: 1725642942772
+entry_point_name: ''
+experiment_id: '403014734416896923'
+lifecycle_stage: active
+run_id: 9f31ca7759884fe1b89af9601dd645b9
+run_name: welcoming-whale-980
+run_uuid: 9f31ca7759884fe1b89af9601dd645b9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1725642934987
+status: 3
+tags: []
+user_id: venu_reddy
