@@ -1,4 +1,4 @@
-#!C:\Users\venu_reddy\OneDrive - EPAM\Learning\mlops\MLOps_learning\module-6\venv_1\Scripts\python.exe
+#!C:\Users\maharshi\OneDrive - EPAM\Learning\mlops\MLOps_learning\module-6\venv_1\Scripts\python.exe
 
 import sys
 import json
