@@ -43,7 +43,7 @@ def main(year, month):
     df = read_data(input_file)
     df['ride_id'] = f'{year:04d}/{month:02d}_' + df.index.astype('str')
 
-    with open('C:/Users/venu_reddy/OneDrive - EPAM\Learning/mlops\MLOps_learning/module-6/homework/model.bin', 'rb') as f_in:
+    with open('C:/Users/maharshi/OneDrive - EPAM\Learning/mlops\MLOps_learning/module-6/homework/model.bin', 'rb') as f_in:
         dv, lr = pickle.load(f_in)
     categorical = ['PULocationID', 'DOLocationID']
     dicts = df[categorical].to_dict(orient='records')
