@@ -39,14 +39,14 @@ def predictions(categorical,year,month):
     X_val = dv.transform(dicts)
     y_pred = model.predict(X_val)
 
-    # print(y_pred.std())
+    print(y_pred.std())
     print(y_pred.mean())
 
 
 
 
-
-categorical = ['PULocationID', 'DOLocationID']
-year = sys.argv[1] 
-month = sys.argv[2]
-predictions(categorical =categorical,year=year,month=month)
+if __name__ == "__main__":    
+    categorical = ['PULocationID', 'DOLocationID']
+    year = sys.argv[1] 
+    month = sys.argv[2]
+    predictions(categorical =categorical,year=year,month=month)

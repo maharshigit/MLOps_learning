@@ -17,13 +17,12 @@ def read_data(filename):
     
     df = pd.read_parquet(filename)
     
-    df['duration'] = df.tpep_dropoff_datetime - df.tpep_pickup_datetime
-    df['duration'] = df.duration.dt.total_seconds() / 60
+    return prepare_data(df)
 
-    df = df[(df.duration >= 1) & (df.duration <= 60)].copy()
-
-    df[categorical] = df[categorical].fillna(-1).astype('int').astype('str')
-    
+def prepare_data(df):
+    df['duration'] = (df.tpep_dropoff_datetime - df.tpep_pickup_datetime).dt.total_seconds() / 60
+    df = df[(df.duration >= 1) & (df.duration <= 60)]
+    df = df.dropna(subset=['PULocationID', 'DOLocationID'])
     return df
 
 def main(year,month):
@@ -32,7 +31,7 @@ def main(year,month):
     output_file = f'output/yellow_tripdata_{year:04d}-{month:02d}.parquet'
 
 
-    with open('../homework/model.bin', 'rb') as f_in:
+    with open('model.bin', 'rb') as f_in:
         dv, lr = pickle.load(f_in)
         
     df = read_data(input_file)

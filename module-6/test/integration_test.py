@@ -1,92 +1,65 @@
-
 #!/usr/bin/env python
 # coding: utf-8
 
-
-
 import boto3
-import sys
-import pickle
 import pandas as pd
-import boto3
-import os 
+import os
+from datetime import datetime
 
+S3_ENDPOINT_URL = "http://localhost:4566"
+BUCKET_NAME = "nyc-duration"
 
-
-
-
-categorical = ['PULocationID', 'DOLocationID']
-
-def read_data(filename):
-    
-    df = pd.read_parquet(filename)
-    
-    df['duration'] = df.tpep_dropoff_datetime - df.tpep_pickup_datetime
-    df['duration'] = df.duration.dt.total_seconds() / 60
-
-    df = df[(df.duration >= 1) & (df.duration <= 60)].copy()
-
-    df[categorical] = df[categorical].fillna(-1).astype('int').astype('str')
-    
-    return df
-
-S3_ENDPOINT_URL = "http://localhost:4566/"
 options = {
-    'client_kwargs': {
-        'endpoint_url': S3_ENDPOINT_URL
-    }
+    "client_kwargs": {"endpoint_url": S3_ENDPOINT_URL},
+    "key": "test",
+    "secret": "test"
 }
 
-
-
-def get_input_path(year, month) -> str:
-    """Get input path"""
-    default_input_pattern = 'https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_{year:04d}-{month:02d}.parquet'
-    input_pattern = os.getenv('INPUT_FILE_PATTERN', default_input_pattern)
-    return input_pattern.format(year=year, month=month)
-
-
-def get_output_path(year, month):
-    """Get output path"""
-    default_output_pattern = 's3://nyc-duration-prediction-alexey/taxi_type=fhv/year={year:04d}/month={month:02d}/predictions.parquet'
-    output_pattern = os.getenv('OUTPUT_FILE_PATTERN', default_output_pattern)
-    return output_pattern.format(year=year, month=month)
-
-
-
-def main(year,month):
+# Sample dataframe similar to Q3/unit test
+def create_sample_df():
+    def dt(hour, minute, second=0):
+        return datetime(2023, 1, 1, hour, minute, second)
     
-    input_file = f'https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_{year:04d}-{month:02d}.parquet'
-    output_file = f'output/yellow_tripdata_{year:04d}-{month:02d}.parquet'
+    data = [
+        (None, None, dt(1, 1), dt(1, 10)),
+        (1, 1, dt(1, 2), dt(1, 10)),
+        (1, None, dt(1, 2, 0), dt(1, 2, 59)),
+        (3, 4, dt(1, 2, 0), dt(2, 2, 1)),
+    ]
+    columns = ['PULocationID', 'DOLocationID', 'tpep_pickup_datetime', 'tpep_dropoff_datetime']
+    df = pd.DataFrame(data, columns=columns)
+    return df
 
+def main(year, month):
+    df_input = create_sample_df()
     
-    input_file = get_input_path(year, month)
+    # Save to S3
+    s3_output = f"s3://{BUCKET_NAME}/in/{year:04d}-{month:02d}.parquet"
     
+    # Initialize S3 client
+    s3 = boto3.resource(
+        "s3",
+        endpoint_url=S3_ENDPOINT_URL,
+        aws_access_key_id="test",
+        aws_secret_access_key="test",
+        region_name="us-east-1",
+    )
     
-    df = read_data(input_file)
+    # Create bucket if not exists
+    if BUCKET_NAME not in [b.name for b in s3.buckets.all()]:
+        s3.create_bucket(Bucket=BUCKET_NAME)
     
-
-    df.to_parquet(output_file, engine='pyarrow', index=False)
-    output_file = get_output_path(year,month)
-    print(output_file)
-    df.to_parquet(
-        output_file,
-        engine='pyarrow',
+    df_input.to_parquet(
+        s3_output,
+        engine="pyarrow",
         compression=None,
         index=False,
         storage_options=options
-    	)
+    )
     
-    # s3 = boto3.resource('s3',S3_ENDPOINT_URL= S3_ENDPOINT_URL)
+    print("Integration test parquet uploaded to:", s3_output)
 
-    # s3.Bucket("nyc-duration").upload_file(output_file, "dump/file")
-    
-    
-    
-if __name__=="__main__":
-    os.environ['OUTPUT_FILE_PATTERN'] = "s3://nyc-duration/out/{year:04d}-{month:02d}.parquet"
-    year = int(sys.argv[1])
-    month = int(sys.argv[2])
-    main(year,month)
-
-        
+if __name__ == "__main__":
+    year = int(os.environ.get("YEAR", 2023))
+    month = int(os.environ.get("MONTH", 1))
+    main(year, month)
